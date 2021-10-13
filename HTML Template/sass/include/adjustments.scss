@@ -1,0 +1,65 @@
+/* number of cart items */
+.cart-num{
+    position: absolute;
+    bottom: 0px;
+    right: -5px;
+    width: 17px;
+}
+
+/* default Bootstrap hamburger menu */
+.navbar-toggler{
+    border: none;
+}
+
+/* banner area background */
+#banner-area{
+    background: url("./assets/banner-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+/* footer link colors */
+#footer a{
+    color: $color-grey;
+}
+#footer a i{
+    color: $color-grey;
+}
+#footer hr{
+    color: $color-grey;
+    border-width: 0.5px;
+}
+
+/* products grid filters */
+.button-group button{
+    border-radius: 0;
+    padding: 2px 0;
+    margin: 0 8px;
+}
+.active-link {
+    border-bottom: 2px solid $color-dark;
+}
+
+/* accordion button */
+.accordion-button, .accordion-button:focus{
+    text-transform: initial;
+}
+.accordion-button:not(.collapsed){
+    color: $color-dark;
+    background-color: $color-grey;
+}
+.accordion-button::after{
+    color: $color-dark;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%231B2727'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+/* tips & tricks image backgound */
+.img-div{
+    background-position: center;
+    background-size: cover;
+    min-height: 200px;
+}
+

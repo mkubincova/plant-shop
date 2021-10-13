@@ -1,0 +1,29 @@
+/* Color classes */
+
+/* Background color */
+.primary-bkg{
+    background: $color-primary;
+} 
+.dark-bkg{
+    background: $color-dark;
+}
+.mid-bkg{
+    background: $color-mid;
+}
+.grey-bkg{
+    background: $color-grey;
+}
+
+/* Text color */
+.primary-text {
+    color: $color-primary;
+}
+.dark-text {
+    color: $color-dark;
+}
+.mid-text {
+    color: $color-mid;
+}
+.grey-text {
+    color: $color-grey;
+}

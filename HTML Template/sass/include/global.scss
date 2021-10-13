@@ -1,0 +1,36 @@
+/* Global classes */
+
+/* buttons style + Bootstrap override */
+button, button:focus{
+    outline: none !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+}
+
+.btn-success:hover,.btn-success:focus{
+    background: $color-primary;
+    border-color: $color-primary;
+}
+.btn-success{
+    background: $color-mid;
+    border-color: $color-mid;
+}
+
+/* fit image into its container */
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* don't underline links */
+a{
+    text-decoration: none;
+    color: $color-mid;
+}
+a:hover{
+    text-decoration: underline;
+    color: $color-mid;
+}
+a.navbar-brand:hover{
+    text-decoration: none;
+}
