@@ -1,6 +1,6 @@
-<section id="new-arrivals" class="my-5 py-3">
+<section id="similar-products" class="my-5 py-3">
     <div class="container">
-        <h3 class="text-center">New Arrivals</h3>
+        <h3 class="text-center">You may also like</h3>
         <hr>
         <!-- owl carousel -->
         <div class="owl-carousel owl-theme">
