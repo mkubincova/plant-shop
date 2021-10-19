@@ -8,14 +8,14 @@
             <p class="my-2 mid-text bold">12.00 <span class="mid-text bold">€</span></p>
             <p class="my-2">Botanical name: <span class="italic">Some flower</span></p>
             <div class="care-icons d-flex my-4 big">
-                <div class="border rounded-circle text-center me-3" style="width: 50px; height: 50px;">
-                    <i class="fas fa-tint"></i>
+                <div class="text-center me-3">
+                    <img src="assets/icons/sun-3.svg" alt="sunshine-icon" class="icon">
                 </div>
-                <div class="border rounded-circle text-center me-3" style="width: 50px; height: 50px;">
-                    <i class="fas fa-cloud-sun mr-3"></i>
+                <div class="text-center me-3">
+                    <img src="assets/icons/temp-3.svg" alt="temperature-icon" class="icon">
                 </div>
-                <div class="border rounded-circle text-center me-3" style="width: 50px; height: 50px;">
-                    <i class="fas fa-thermometer-quarter"></i>
+                <div class="text-center me-3">
+                    <img src="assets/icons/water-1.svg" alt="water-icon" class="icon">
                 </div>
             </div>
             <h5>Description</h5>
