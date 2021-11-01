@@ -41,6 +41,25 @@
     border-bottom: 2px solid $color-dark;
 }
 
+/* product grid size */
+.product {
+    width: 100%;
+}
+.grid-item {
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+@media screen and (min-width: 600px) {
+    .grid-item {
+        width: 30%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .grid-item {
+        width: calc(20% - 20px);
+    }
+}
+
 /* accordion button */
 .accordion-button, .accordion-button:focus{
     text-transform: initial;

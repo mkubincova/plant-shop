@@ -37,22 +37,22 @@
             <div class="card m-2" style="width: 18rem;">
                 <img src="assets/team/annie.png" class="card-img-top" alt="hana">
                 <div class="card-body text-center">
-                    <h6 class="card-title">Hana Smidth</h6>
-                    <p class="card-text small">Florist Extraordinaire</p>
+                    <h6 class="card-title">Emily Mitchelle</h6>
+                    <p class="card-text small">Founder of Plant shop</p>
                 </div>
             </div>
             <div class="card m-2" style="width: 18rem;">
                 <img src="assets/team/josh.png" class="card-img-top" alt="hana">
                 <div class="card-body text-center">
-                    <h6 class="card-title">Hana Smidth</h6>
+                    <h6 class="card-title">Mark Collins</h6>
                     <p class="card-text small">Florist Extraordinaire</p>
                 </div>
             </div>
             <div class="card m-2" style="width: 18rem;">
                 <img src="assets/team/patricia.png" class="card-img-top" alt="hana">
                 <div class="card-body text-center">
-                    <h6 class="card-title">Hana Smidth</h6>
-                    <p class="card-text small">Florist Extraordinaire</p>
+                    <h6 class="card-title">Gina Jones</h6>
+                    <p class="card-text small">Marketing specialist</p>
                 </div>
             </div>
         </div>

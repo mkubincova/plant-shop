@@ -27,6 +27,11 @@ $base_path =  $protocol . "://" . $host . "/" . $folder . "/";
 
     <!-- Custom CSS file -->
     <link rel="stylesheet" href="https://<?= $_SERVER['HTTP_HOST']; ?>/ict-110-final-project/style.css?v=<?= time(); ?>" type="text/css">
+
+    <?php 
+    //required functions.php file
+    require('functions.php');
+    ?>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -53,7 +58,7 @@ $base_path =  $protocol . "://" . $host . "/" . $folder . "/";
                     <a class="nav-link" href="<?= $base_path ?>cart.php">
                         <div style="position: relative; width: min-content;">
                             <span class="bigger"><i class="fas fa-shopping-basket dark-text"></i></span>
-                            <div class="bg-warning text-center rounded-circle small cart-num dark-text">0</div>
+                            <div class="bg-warning text-center rounded-circle small cart-num dark-text"><?= count($customerCart) ?></div>
                         </div>
                     </a>
                 </div>

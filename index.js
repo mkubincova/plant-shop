@@ -60,26 +60,50 @@ $(document).ready(function(){
     //product qty section
     let $qty_up = $(".qty .qty-up");
     let $qty_down = $(".qty .qty-down");
+    let $sub_total = $("#subtotal");
 
     //click event qty-up
     $qty_up.click(function(e){
-        //get input field with data-id matching the clicked button
+
+        //get input field and price span with data-id matching the clicked button
         let $input = $(`.qty-input[data-id='${$(this).data("id")}']`); 
+        let $item_price = parseFloat($(`.price-pc[data-id='${$(this).data("id")}']`).text()); 
+
+        //increase input value
         if($input.val() >= 1 && $input.val() <= 19){
             $input.val(function(i,oldval){
                 return ++oldval;
-            })
+            });
+            //set total price
+            let $new_price = ($input.val()*$item_price).toFixed(2);
+            let $price = $(`.price-to[data-id='${$(this).data("id")}']`).text(`${$new_price}`);
+            
+            let $new_sub_total = (parseFloat($sub_total.text()) + $item_price).toFixed(2);
+            $sub_total = $sub_total.text(`${$new_sub_total}`);
         }
+
     })
 
     //click event qty-down
     $qty_down.click(function(e){
+    
+        //get input field and price span with data-id matching the clicked button
         let $input = $(`.qty-input[data-id='${$(this).data("id")}']`);
+        let $item_price = parseFloat($(`.price-pc[data-id='${$(this).data("id")}']`).text()); 
+
         if($input.val() > 1 && $input.val() <= 20){
             $input.val(function(i,oldval){
                 return --oldval;
-            })
+            });
+            //set total price
+            let $new_price = ($input.val()*$item_price).toFixed(2);
+            let $price = $(`.price-to[data-id='${$(this).data("id")}']`).text(`${$new_price}`);
+
+            let $new_sub_total = (parseFloat($sub_total.text()) - $item_price).toFixed(2);
+            $sub_total = $sub_total.text(`${$new_sub_total}`);
         }
+
+        
     })
 
 });

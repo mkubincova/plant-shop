@@ -1,4 +1,13 @@
 <?php include 'header.php' ?>
+<?php
+rsort($product_shuffle);
+
+//request method post
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    //call method add to cart
+    $cart->addToCart($_POST['customerId'], $_POST['productId']);
+}
+?>
 
 <div class="container my-5">
     <!-- Product filters -->
@@ -13,126 +22,32 @@
 
     <!-- Product grid -->
     <div class="grid mx-auto">
-        <div class="grid-item Succulent">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/cacti-mix-2.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Succulent</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
+        <?php foreach ($product_shuffle as $item) { ?>
+            <div class="grid-item <?= $item['category'] ?? "" ?>">
+
+                <div class="product p-2 border">
+                    <a href="product.php?id=<?= $item['productId'] ?? "" ?>">
+                        <img src="<?= $item['imgUrl'] ?? "assets/products/cacti-mix-2.png" ?>" alt="product">
+                    </a>
+                    <div class="text-center">
+                        <h6 class="my-1"><?= $item['name'] ?? "Nothing" ?></h6>
+                        <p class="mb-1"><?= $item['price'] ?? "0.00" ?><span>€</span></p>
+                        <form method="post">
+                            <input type="hidden" name="productId" value="<?= $item['productId'] ?? 1 ?>">
+                            <input type="hidden" name="customerId" value="<?= $_COOKIE["customerId"] ?? 1 ?>">
+                            <?php
+                            if (in_array($item['productId'], $cartIdArr)) {
+                                echo '<button class="btn btn-secondary btn-sm" disabled>already in cart</button>';
+                            } else {
+                                echo '<button name="products_submit" class="btn btn-success btn-sm">add to cart</button>';
+                            }
+                            ?>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="grid-item Succulent">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/aloe-vera.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Succulent</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Flower">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/athurium.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Flower</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Leafy">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/fittonia.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Leafy</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Accessory">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/pot-2.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Accessory</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Leafy">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/monstera-deliciosa.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Leafy</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Flower">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/orchidea.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Flower</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Succulent">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/cacti-mix.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Succulent</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Accessory">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/pot.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Accessory</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
-        <div class="grid-item Flower">
-            <div class="product m-2 p-2 border" style="width: 200px;">
-                <a href="">
-                    <img src="assets/products/violet.png" alt="product">
-                </a>
-                <div class="text-center">
-                    <h6 class="my-1">Flower</h6>
-                    <p class="mb-1">12.00 <span>€</span></p>
-                    <button class="btn btn-success btn-sm">add to cart</button>
-                </div>
-            </div>
-        </div>
+        <?php } //closing forearch function
+        ?>
     </div>
     <!-- !Product grid -->
 
