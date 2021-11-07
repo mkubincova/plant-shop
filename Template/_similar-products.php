@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['similar_products_submi
         <div class="owl-carousel owl-theme">
             <?php foreach ($product_shuffle as $item) { ?>
                 <div class="item py-2">
-                    <div class="product m-3">
+                    <div class="m-3">
                         <a href="product.php?id=<?= $item['productId'] ?? "" ?>">
                             <img src="<?= $item['imgUrl'] ?? "assets/products/cacti-mix-2.png" ?>" alt="product">
                         </a>
