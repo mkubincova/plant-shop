@@ -3,8 +3,8 @@
 //identify customer
 if (!isset($_COOKIE["customerId"])) {
     $cookie_name = "customerId";
-    $cookie_value = rand();
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
+    $cookie_value = uniqid(rand());
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
     header("Location:" . $_SERVER['PHP_SELF']); //reload page to save the cookie
 }
 
@@ -27,8 +27,9 @@ $product_shuffle = $product->getData();
 
 //Cart object
 $cart = new Cart($db);
-$customerCart = $cart->getCart($_COOKIE["customerId"]);
-$cartIdArr = $cart->getCartId($customerCart) ?? [];
+$customersCart = $cart->getCustomerCart($_COOKIE["customerId"]);
+$cartProductsIds = $cart->getProductIds($customersCart) ?? [];
+
 
 
 

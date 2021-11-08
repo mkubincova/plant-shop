@@ -2,7 +2,7 @@
     //delete cart item
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_cart_item'])) {
         //call delete cart method
-        $deletedItem = $cart->deleteCart($_POST['customerId'], $_POST['productId']);
+        $deletedItem = $cart->deleteCartRecord($_POST['customerId'], $_POST['productId']);
     }
 ?>
 
@@ -10,7 +10,7 @@
 <div class="cart-items my-2 col-lg-9 mx-lg-2">
     <!-- Cart item -->
     <?php
-    foreach ($customerCart as $item) :
+    foreach ($customersCart as $item) :
         $cart1 = $product->getProduct($item['productId']);
         $subTotal[] = array_map(function ($item) {
     ?>

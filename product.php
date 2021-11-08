@@ -41,7 +41,7 @@ foreach ($product_shuffle as $item) :
                         <input type="hidden" name="productId" value="<?= $item['productId']?>">
                         <input type="hidden" name="customerId" value="<?= $_COOKIE["customerId"]?>">
                         <?php
-                        if (in_array($item['productId'], $cartIdArr)) {
+                        if (in_array($item['productId'], $cartProductsIds)) {
                             echo '<button class="btn btn-secondary btn-sm" disabled>already in cart</button>';
                         } else {
                             echo '<button name="products_submit" class="btn btn-success btn-sm">add to cart</button>';

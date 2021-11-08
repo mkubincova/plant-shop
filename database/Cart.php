@@ -15,9 +15,10 @@ class Cart{
             if($params != null){
                 $columns = implode(',', array_keys($params));
                 $values = implode(',', array_values($params));
+                $vals = array_values($params);
 
                 //create sql query
-                $query_string = sprintf("INSERT INTO %s(%s) VALUES(%s)",$table, $columns, $values);
+                $query_string = sprintf("INSERT INTO %s(%s) VALUES('%s',%s)",$table, $columns, $vals[0], $vals[1]);
           
                 //execute query
                 $result = $this->db->con->query($query_string);
@@ -43,16 +44,17 @@ class Cart{
     }
 
     //get cart by customerId
-    public function getCart($customerId = null, $table = 'cart')
+    public function getCustomerCart($customerId = null, $table = 'cart')
     {
         if (isset($customerId)) {
-            $result = $this->db->con->query("SELECT * FROM {$table} WHERE customerId = {$customerId}");
+            $result = $this->db->con->query("SELECT * FROM {$table} WHERE customerId = '{$customerId}'");
             $resultArr = array();
 
-            while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                $resultArr[] = $item;
-            }
-
+            if ($result->num_rows > 0) {
+                while ($item = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                    $resultArr[] = $item;
+                }
+            }    
             return $resultArr;
         }
     }
@@ -69,9 +71,9 @@ class Cart{
     }
 
     //delete cart item by productId and customerId
-    public function deleteCart($customerId, $productId, $table = 'cart'){
+    public function deleteCartRecord($customerId, $productId, $table = 'cart'){
         if(isset($productId) && isset($customerId)){
-            $result = $this->db->con->query("DELETE FROM {$table} WHERE productId = {$productId} AND customerId = {$customerId}");
+            $result = $this->db->con->query("DELETE FROM {$table} WHERE productId = {$productId} AND customerId = '{$customerId}'");
             if($result){
                 header("Location: cart.php");
             }
@@ -79,8 +81,8 @@ class Cart{
         }
     }
 
-    //get productId from shopping cart list
-    public function getCartId($cartArr = null, $key = 'productId'){
+    //get productId from customers shopping cart
+    public function getProductIds($cartArr = null, $key = 'productId'){
         if($cartArr != null){
             $cartId = array_map (function($value) use($key){
                 return $value[$key];
@@ -88,5 +90,6 @@ class Cart{
             return $cartId;
         }
     }
+
 }
 

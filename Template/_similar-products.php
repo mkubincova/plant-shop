@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['similar_products_submi
                                 <input type="hidden" name="productId" value="<?= $item['productId'] ?? 1 ?>">
                                 <input type="hidden" name="customerId" value="<?= $_COOKIE["customerId"] ?? 1 ?>">
                                 <?php
-                                if (in_array($item['productId'], $cartIdArr)) {
+                                if (in_array($item['productId'], $cartProductsIds)) {
                                     echo '<button class="btn btn-secondary btn-sm" disabled>already in cart</button>';
                                 } else {
                                     echo '<button name="similar_products_submit" class="btn btn-success btn-sm">add to cart</button>';

@@ -19,7 +19,7 @@ CREATE TABLE plantshopDB.products (
 CREATE TABLE plantshopDB.cart(
     cartId INT NOT NULL AUTO_INCREMENT,
     productId INT NOT NULL,
-    customerId INT NOT NULL,
+    customerId VARCHAR(255) NOT NULL,
     timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(cartId),
     FOREIGN KEY (productId) REFERENCES products(productId)
