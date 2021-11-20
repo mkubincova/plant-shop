@@ -15,7 +15,7 @@
         $subTotal[] = array_map(function ($item) {
     ?>
             <div class="item d-flex border-bottom py-3">
-                <img src="<?= $item['imgUrl'] ?? "assets/products/cacti-mix-2.png" ?>" alt="product" style="max-height: 130px;">
+                <img src="<?= $item['imgUrl'] ?? "assets/products/not-found.svg" ?>" alt="product" style="max-height: 130px;">
                 <div class="ps-3">
                     <h4><?= $item['name'] ?? "Nothing" ?></h4>
                     <h5 class="mid-text my-0 price-to" data-id="<?= $item['productId'] ?>" ?><?= $item['price'] ?? 0.00 ?></h5>

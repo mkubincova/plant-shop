@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['similar_products_submi
                 <div class="item py-2">
                     <div class="m-3">
                         <a href="product.php?id=<?= $item['productId'] ?? "" ?>">
-                            <img src="<?= $item['imgUrl'] ?? "assets/products/cacti-mix-2.png" ?>" alt="product">
+                            <img src="<?= $item['imgUrl'] ?? "assets/products/not-found.svg" ?>" alt="product">
                         </a>
                         <div class="text-center">
                             <h6 class="my-1"><?= $item['name'] ?? "Nothing" ?></h6>

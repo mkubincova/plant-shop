@@ -20,16 +20,19 @@
 }
 
 /* footer link colors */
-#footer a{
-    color: $color-grey;
-}
-#footer a i{
-    color: $color-grey;
-}
-#footer hr{
-    color: $color-grey;
-    border-width: 0.5px;
-}
+#footer{
+    a {
+        color: $color-grey;
+        i {
+            color: $color-grey;
+        }
+    }
+    hr {
+        color: $color-grey;
+        border-width: 0.5px;
+    }
+} 
+
 
 /* products grid filters */
 .button-group button{

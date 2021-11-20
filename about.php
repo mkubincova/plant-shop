@@ -19,14 +19,51 @@
     <div class="container py-5 d-flex flex-column flex-lg-row align-items-lg-center">
         <div class="story p-0 p-lg-3">
             <h3>Sustainability</h3>
-            <p class="mb-0">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis nam temporibus sint repudiandae excepturi alias. Assumenda quibusdam magnam sed, eos sit quo quasi vitae quidem? Quisquam qui accusamus quia eligendi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis nam temporibus sint repudiandae excepturi alias. Assumenda quibusdam magnam sed, eos sit quo quasi vitae quidem? Quisquam qui accusamus quia eligendi.</p>
+            <p class="mb-0">Here in Plant shop, we are very invested in keeping out planet healthy. That's why 1% of our profit goes to charity selected for a year. In the end it's you, who helps the earth with every purchase! This years profit is sent to <span class="bold">#TeamSeas</span>, an initiative dedicated to cleaning oceans from waste. You can read more about them here: <a href="https://teamseas.org/">https://teamseas.org/</a> </p>
         </div>
         <div class="col-12 col-lg-6 py-3">
-            <img src="assets/pottery.png" alt="pottery">
+            <iframe width="100%" height="315" src="https://www.youtube.com/embed/cV2gBU6hKfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 </section>
 <!-- !Sustainability -->
+
+<!-- Previous donations -->
+<section id="donations" class="grey-bkg">
+    <div class="container py-5 table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Initiative</th>
+                    <th scope="col">Website</th>
+                    <th scope="col">Cause</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">2020</th>
+                    <td>Rainforest Alliance</td>
+                    <td><a href="https://www.rainforest-alliance.org/">rainforest-alliance.org</a></td>
+                    <td>biodiversity conservation</td>
+                </tr>
+                <tr>
+                    <th scope="row">2019</th>
+                    <td>WildAid</td>
+                    <td><a href="https://wildaid.org/">wildaid.org</a></td>
+                    <td>end illegal wildlife trade</td>
+                </tr>
+                <tr>
+                    <th scope="row">2018</th>
+                    <td>Beyond Pesticides</td>
+                    <td><a href="https://www.beyondpesticides.org/">beyondpesticides.org</a></td>
+                    <td>reducing the need for unnecessary pesticide use</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!-- !Previous donations -->
 
 <!-- Work with us -->
 <section id="career">

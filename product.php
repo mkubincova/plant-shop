@@ -19,10 +19,10 @@ foreach ($product_shuffle as $item) :
         <section id="product-info">
             <div class="container py-5 d-flex flex-column flex-lg-row-reverse flex-lg-row">
                 <div class="product-text col-12 col-lg-6 my-3">
-                    <h1><?= $item['name'] ?? "Nothing" ?></h1>
+                    <h1><?= $item['name'] ?? "???" ?></h1>
                     <p class="my-2 mid-text bold"><?= $item['price'] ?? "0.00" ?><span class="mid-text bold">€</span></p>
                     <?php if ($item['category'] != "Accessory") { ?>
-                        <p class="my-2">Botanical name: <span class="italic"><?= $item['botName'] ?? "no idea" ?></span></p>
+                        <p class="my-2">Botanical name: <span class="italic"><?= $item['botName'] ?? "Cool latin phrase" ?></span></p>
                         <div class="care-icons d-flex my-4 big">
                             <div class="text-center me-3">
                                 <img src="assets/icons/sun-<?= $item['sun'] ?? 1 ?>.svg" alt="sunshine-icon" class="icon">
@@ -36,7 +36,7 @@ foreach ($product_shuffle as $item) :
                         </div>
                     <?php } ?>
                     <h5>Description</h5>
-                    <p><?= $item['description'] ?? "I dont know" ?></p>
+                    <p><?= $item['description'] ?? "You'll have to find out on your own..." ?></p>
                     <form method="post">
                         <input type="hidden" name="productId" value="<?= $item['productId']?>">
                         <input type="hidden" name="customerId" value="<?= $_COOKIE["customerId"]?>">
@@ -50,7 +50,7 @@ foreach ($product_shuffle as $item) :
                     </form>
                 </div>
                 <div class="product-img col-12 col-lg-6 my-3 pe-3">
-                    <img src="<?= $item['imgUrl'] ?? "assets/products/cacti-mix-2.png" ?>" alt="product">
+                    <img src="<?= $item['imgUrl'] ?? "assets/products/not-found.svg" ?>" alt="product">
                 </div>
             </div>
         </section>

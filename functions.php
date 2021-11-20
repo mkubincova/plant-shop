@@ -4,7 +4,7 @@
 if (!isset($_COOKIE["customerId"])) {
     $cookie_name = "customerId";
     $cookie_value = uniqid(rand());
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 7), "/"); // 86400 = 1 day
+    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
     header("Location:" . $_SERVER['PHP_SELF']); //reload page to save the cookie
 }
 

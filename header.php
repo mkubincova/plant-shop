@@ -1,7 +1,7 @@
 <?php
 $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 'https' : 'http';
 $host = $_SERVER['HTTP_HOST'];
-$folder = "ict-110-final-project";
+$folder = "ICT110-project";
 $base_path =  $protocol . "://" . $host . "/" . $folder . "/";
 ?>
 
@@ -26,7 +26,7 @@ $base_path =  $protocol . "://" . $host . "/" . $folder . "/";
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Custom CSS file -->
-    <link rel="stylesheet" href="https://<?= $_SERVER['HTTP_HOST']; ?>/ict-110-final-project/style.css?v=<?= time(); ?>" type="text/css">
+    <link rel="stylesheet" href="<?= $base_path; ?>style.css?v=<?= time(); ?>" type="text/css">
 
     <?php 
     //required functions.php file

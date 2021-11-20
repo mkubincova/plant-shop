@@ -8,6 +8,7 @@ rsort($tips);
 ?>
 
 <div class="container my-5">
+
     <!-- Gardening tips & tricks -->
     <?php foreach($tips as $tip):?>
     <div class="item mx-2 my-3 d-flex flex-column flex-md-row border">

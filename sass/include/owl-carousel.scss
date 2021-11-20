@@ -1,0 +1,29 @@
+/* Arrow style in owl-carousel */
+
+#new-arrivals, #similar-products{
+    .owl-carousel .owl-nav button{
+        position: absolute;
+        top: 30%;
+        outline: none;
+    }
+
+    .owl-carousel .owl-nav {
+        button.owl-prev {
+            left: -10px;
+        }
+        button.owl-next {
+            right: -10px;
+        }
+        button.owl-prev span,
+        button.owl-next span {
+            font-size: 35px;
+            color: $color-mid;
+        }
+        button.owl-prev:hover,
+        button.owl-next:hover {
+            background: transparent;
+        }
+
+    }
+}
+
