@@ -26,7 +26,7 @@
                             <button class="qty-up border grey-bkg" data-id="<?= $item['productId'] ?>">
                                 <i class="fas fa-angle-up"></i>
                             </button>
-                            <input type="text" class="qty-input border px-3 bg-light text-center" data-id="<?= $item['productId'] ?>" disabled value="1" placeholder="1" autocomplete=off style="width: 70px;">
+                            <input type="text" class="qty-input border px-2 bg-light text-center" data-id="<?= $item['productId'] ?>" disabled value="1" placeholder="1" autocomplete=off style="width: 50px;">
                             <button class="qty-down border grey-bkg" data-id="<?= $item['productId'] ?>">
                                 <i class="fas fa-angle-down"></i>
                             </button>
@@ -35,7 +35,7 @@
                         <form method="post">
                             <input type="hidden" name="productId" value="<?= $item['productId'] ?? 1 ?>">
                             <input type="hidden" name="customerId" value="<?= $_COOKIE["customerId"] ?? 1 ?>">
-                            <button type="submit" name="delete_cart_item" class="btn btn-outline-danger small mx-3">
+                            <button type="submit" name="delete_cart_item" class="btn btn-outline-danger small mx-2 mx-lg-3">
                                 delete
                             </button>
                         </form>
